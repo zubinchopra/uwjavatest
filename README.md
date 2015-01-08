@@ -1,6 +1,3 @@
-<<<<<<< Local Changes
-<<<<<<< Local Changes
-<<<<<<< Local Changes
 # Greetings!
 This exercise is designed to test your ability to compile Java programs, modifying Java source code
 as necessary to make that happen.
@@ -85,12 +82,3 @@ Fire away. Again, remember,
 
 [1]: http://www.gradle.org
 [2]: http://brew.sh/
-=======
-The task is simple: Make the code compile, and make all the unit tests pass.
->>>>>>> External Changes
-=======
-The task is simple: Make the code compile, and make all the unit tests pass.
->>>>>>> External Changes
-=======
-The task is simple: Make the code compile, and make all the unit tests pass.
->>>>>>> External Changes
