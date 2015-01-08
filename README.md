@@ -86,7 +86,7 @@ This is pretty simple stuff; accordingly, this is kind of a pass/fail scenario. 
 full marks; don't get all the tests to pass, nada.
 
 ## Questions
-Fire away. Again, remember, 
+Fire away, to either me or the TA.
 
 
 [1]: http://www.gradle.org
