@@ -20,21 +20,6 @@ public class Person {
     salary = s;
   }
 
-  public int getAge() {
-    return age;
-  }
-  
-  public String getName() {
-    return name;
-  }
-  
-  public double getSalary() {
-    return salary;
-  }
-  
-  public String getSSN() {
-    return ssn;
-  }
   public void setSSN(String value) {
     String old = ssn;
     ssn = value;
@@ -58,10 +43,6 @@ public class Person {
     return age + 10;
   }
   
-  public boolean equals(Person other) {
-    return (this.name.equals(p.name) && this.age == p.age);
-  }
-
   public String tostring() {
     return "{{FIXME}}";
   }
