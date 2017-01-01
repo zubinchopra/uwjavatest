@@ -7,6 +7,31 @@ tests that already exist in the files in the "src/test" subdirectories; you will
 a few tests, as well.
 
 ## To do that...
+... you must first obtain a copy of the source. Do that by cloning this repository:
+
+    git clone https://bitbucket.org/TedNeward/uwjavatest uwjavatest
+
+This will create a local copy of the project. However, in order to *store* your changes to your own
+GitHub account, you need to create a new repository on GitHub (call it uwjavatest again), and then
+change the project's settings to point to that new repository as the remote origin.
+
+    git remote set-url origin https://github.com/[your-ID]/uwjavatest.git
+
+This will work regardless of whether you got the syntax of the URL correct or not, so do a quick
+push to make sure it all worked correctly:
+
+    git push
+
+Git will ask you for your username and password, then (if everything was done correctly), it will
+upload the code to the new repository, and this is your new "home" for this project going forward.
+Verify the files are there by viewing your GitHub project through the browser.
+
+***NOTE:*** Your grade for this assignment (and all future assignments) will be based on what we
+see in the GitHub repository, and nothing else. If it isn't in GitHub, it doesn't exist.
+
+Now, you can begin to work on the homework code.
+
+## To do that...
 ... you must make the code compile. To do that, we will use a build system that is popular in the Java
 world, called "Gradle". It will likely require you to install some stuff on your machine.
 
@@ -16,7 +41,8 @@ machine of choice.
 
 Note that if you have a Mac, this is much easier; install [Homebrew][2], and once that's done, issue
 "brew install gradle" at the command-line. You will need to have Java installed on your Mac already,
-which may require a download from Oracle to do so.
+which may require a [download from Oracle][3] to do so. (Or, you can use Homebrew again, if you feel
+comfortable doing so: `brew update && brew cask install java`.)
 
 The reason we are using Gradle is because this is the build system used internally inside Android Studio
 (at least for now). Understanding a little of how it works will be helpful when working with your own
@@ -91,3 +117,4 @@ Fire away, to either me or the TA.
 
 [1]: http://www.gradle.org
 [2]: http://brew.sh/
+[3]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
