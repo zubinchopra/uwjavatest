@@ -3,13 +3,13 @@ package com.tedneward.example;
 import java.beans.*;
 import java.util.*;
 
-public class Person implements Comparator<Person>, Comparable<Person>{
+public class Person implements Comparable<Person>{
   private int age;
   private String name;
   private double salary;
   private String ssn;
   private boolean propertyChangeFired = false;
-  private static List<Person> list;
+  private int count;
 
   public Person() {
     this("", 0, 0.0d);
@@ -19,32 +19,23 @@ public class Person implements Comparator<Person>, Comparable<Person>{
     name = n;
     age = a;
     salary = s;
-    list.add(this);
+    this.count++;
   }
 
   public void setAge(int age){
      if(age < 0)
       throw new IllegalArgumentException();
-     int old = this.age;
      this.age = age;
-     this.pcs.firePropertyChange("age", old, age);
-     this.propertyChangeFired = true;
   }
 
   public void setName(String name){
-     if(name.equals(null))
+     if(name == null)
       throw new IllegalArgumentException();
-     String old = this.name;
      this.name = name;
-     this.pcs.firePropertyChange("name", old, name);
-     this.propertyChangeFired = true;
   }
 
   public void setSalary(double salary){
-     double old = this.salary;
      this.salary = salary;
-     this.pcs.firePropertyChange("salary", old, salary);
-     this.propertyChangeFired = true;
   }
 
   public int getAge(){
@@ -56,6 +47,11 @@ public class Person implements Comparator<Person>, Comparable<Person>{
   }
 
   public static List<Person> getNewardFamily(){
+     List<Person> list = new ArrayList<Person>();
+     list.add(new Person("Ted", 41, 250000));
+     list.add(new Person("Charlotte", 43, 150000));
+     list.add(new Person("Michael", 22, 10000));
+     list.add(new Person("Matthew", 15, 0));
      return list;
  }
 
@@ -75,28 +71,38 @@ public class Person implements Comparator<Person>, Comparable<Person>{
   }
 
   public String becomeJudge() {
-    return "The Honorable " + name;
+    return "The Honorable " + this.name;
   }
 
   public int timeWarp() {
     return age + 10;
   }
 
-  public String tostring() {
-    return "{{FIXME}}";
+  public String toString() {
+     //[Person name:Fird Birfle age:20 salary:195750.22]
+    return "[Person name:" + this.name + " age:" + this.age + " salary:" +
+                                                               this.salary +"]";
   }
 
   public int count(){
-     return this.list.size();
+     return this.count;
+  }
+
+  public boolean equals(Object other){
+     if (other instanceof Person) {
+         Person p = (Person)other;
+         return p.name == this.name && p.age == this.age;
+     }
+     return false;
   }
 
   public int compareTo(Person other){
      return Double.compare(other.salary, this.salary);
   }
 
-  private static class AgeComparator{
-    public int compare(Person other){
-      return this.getAge() - other.getAge();
+  public static class AgeComparator implements Comparator<Person>{
+    public int compare(Person one, Person two){
+      return one.getAge() - two.getAge();
     }
   }
 
